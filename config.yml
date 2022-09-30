@@ -3,7 +3,8 @@ config:
   tls:
     rejectUnauthorized: false
   phases:
-    - duration: "{{ $processEnvironment.DURATION }}"
+    - name: "{{ $processEnvironment.ARRIVAL_RATE }} users per second for {{ $processEnvironment.DURATION }} seconds"
+      duration: "{{ $processEnvironment.DURATION }}"
       arrivalRate: "{{ $processEnvironment.ARRIVAL_RATE }}"
   # Enable the Playwright engine:
   engines:
