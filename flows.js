@@ -2,10 +2,6 @@ module.exports = { pageViewFlow };
 
 async function pageViewFlow(page, context) {
   try {
-    console.log(`TARGET: ${context.vars.target}`);
-    // console.log(`DURATION: ${context.vars.phases.duration} seconds`);
-    // console.log(`ARRIVAL RATE: ${context.vars.phases.arrivalRate} virtual users/second`);
-
     const baseUrl = context.vars.target;
     const waitTime = 65_000;
 
