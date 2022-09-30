@@ -1,0 +1,18 @@
+config:
+  target: "{{ $processEnvironment.TARGET }}"
+  tls:
+    rejectUnauthorized: false
+  phases:
+    - duration: "{{ $processEnvironment.DURATION }}"
+      arrivalRate: "{{ $processEnvironment.ARRIVAL_RATE }}"
+  # Enable the Playwright engine:
+  engines:
+    playwright: 
+      - defaultTimeout: 120
+        defaultNavigationTimeout: 120
+  processor: "./flows.js"
+scenarios:
+  - name: "view_pages"
+    engine: playwright
+    flowFunction: "pageViewFlow"
+    flow: []
