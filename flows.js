@@ -6,7 +6,9 @@ async function pageViewFlow(page, context) {
     const waitTime = 65_000;
 
     await page.goto(`${baseUrl}/contact`);
+    await wait(waitTime);
     await page.goto(`${baseUrl}/privacy`);
+    await wait(waitTime);
     await page.goto(`${baseUrl}/careers`);
     await wait(waitTime);
     
